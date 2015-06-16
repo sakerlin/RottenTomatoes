@@ -17,7 +17,7 @@ Time spent: `<Number of hours spent>`
 #### Optional
 - [ ] Add a tab bar for Box Office and DVD.
 - [ ] Implement segmented control to switch between list view and grid view
-- [ ] Add a search bar: pretty simple implementation of searching against the existing table view data.
+- [x] Add a search bar: pretty simple implementation of searching against the existing table view data.
 - [x] All images fade in.
 - [x] For the larger poster, load the low-res first and switch to high-res when complete.
 - [ ] Customize the highlight and selection effect of the cell.

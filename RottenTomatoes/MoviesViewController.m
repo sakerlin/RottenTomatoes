@@ -12,12 +12,17 @@
 #import <UIImageView+AFNetworking.h>
 #import "SVProgressHUD.h"
 
-@interface MoviesViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MoviesViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *movies;
+@property (strong, nonatomic) NSArray *tempMovies;
 @end
 
 @implementation MoviesViewController
+
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -63,6 +68,7 @@
          if (connectionError == nil) {
              NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
              self.movies = dict[@"movies"];
+             self.tempMovies = self.movies;
              [self.tableView reloadData] ;
              [self hideNetworkError];
          } else {
@@ -77,6 +83,41 @@
     [self updateTable];
     [(UIRefreshControl *)sender endRefreshing];
 }
+
+#pragma mark - searchBar
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if(searchText.length > 0){
+        NSMutableArray *temp = [[NSMutableArray alloc] init];
+        for (int i = 0; i< self.tempMovies.count; i++) {
+            if ([[((NSDictionary*)self.tempMovies[i])[@"title"] lowercaseString] hasPrefix:[searchBar.text lowercaseString]]) {
+                [temp addObject:self.tempMovies[i]];
+            }
+        }
+        self.movies = temp;
+        temp = nil;
+        [self.tableView reloadData];
+    } else {
+        self.movies = self.tempMovies;
+        [self.tableView reloadData];
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    [self.tableView reloadData];
+    [self.view endEditing:YES];
+}
+- (IBAction)onTap:(UITapGestureRecognizer *)sender {
+    [self.view endEditing:YES];
+}
+
+
+#pragma mark - tableView
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -122,6 +163,7 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     [self.view endEditing:YES];
     MovieCell *cell = sender;
     NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
     NSDictionary *movie = self.movies[indexpath.row];

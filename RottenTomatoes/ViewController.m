@@ -23,17 +23,18 @@
     
     UIImage *placeHolderImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: lowResImg]]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: hightResImg]];
+     
     [self.posterView setImageWithURLRequest:request
                            placeholderImage:placeHolderImage
                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                        if (request) {
+                                        
                                             //Fade animation
                                             [UIView transitionWithView:self.posterView
                                                               duration:2.0f
                                                                options:UIViewAnimationOptionTransitionCrossDissolve
                                                             animations:^{[self.posterView setImage:image];}
                                                             completion:NULL];
-                                        }
+                                        
                                         
                                     }
                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
