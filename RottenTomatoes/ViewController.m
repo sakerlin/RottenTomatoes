@@ -18,9 +18,29 @@
     [super viewDidLoad];
     self.titleLabel.text =  self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"synopsis"];
-    NSString *posterURLString = [self.movie valueForKeyPath:@"posters.original"];
-    posterURLString = [self convertPosterUrlStringToHighRes:posterURLString];
-    [self.posterView setImageWithURL:[NSURL URLWithString:posterURLString]];
+    NSString *lowResImg = [self.movie valueForKeyPath:@"posters.original"];
+    NSString *hightResImg = [self convertPosterUrlStringToHighRes:lowResImg];
+    
+    UIImage *placeHolderImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: lowResImg]]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: hightResImg]];
+    [self.posterView setImageWithURLRequest:request
+                           placeholderImage:placeHolderImage
+                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                        if (request) {
+                                            //Fade animation
+                                            [UIView transitionWithView:self.posterView
+                                                              duration:2.0f
+                                                               options:UIViewAnimationOptionTransitionCrossDissolve
+                                                            animations:^{[self.posterView setImage:image];}
+                                                            completion:NULL];
+                                        }
+                                        
+                                    }
+                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                        NSLog(@"fail");
+                                    }
+     
+     ];
 }
 
 - (void)didReceiveMemoryWarning {
