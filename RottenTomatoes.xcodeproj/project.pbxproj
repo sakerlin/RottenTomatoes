@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292933E31B2FE7FA00CE936B /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 292933E21B2FE7FA00CE936B /* movie.png */; };
+		292933E51B2FE83600CE936B /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = 292933E41B2FE83600CE936B /* dvd.png */; };
 		29B320091B2C2272000B9BED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B320081B2C2272000B9BED /* main.m */; };
 		29B3200C1B2C2272000B9BED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3200B1B2C2272000B9BED /* AppDelegate.m */; };
 		29B3200F1B2C2272000B9BED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3200E1B2C2272000B9BED /* ViewController.m */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		292933E21B2FE7FA00CE936B /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
+		292933E41B2FE83600CE936B /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
 		29B320031B2C2272000B9BED /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B320071B2C2272000B9BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B320081B2C2272000B9BED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				29B3200D1B2C2272000B9BED /* ViewController.h */,
 				29B3200E1B2C2272000B9BED /* ViewController.m */,
 				29B320101B2C2272000B9BED /* Main.storyboard */,
+				292933E41B2FE83600CE936B /* dvd.png */,
 				29B3202C1B2C3288000B9BED /* MoviesViewController.h */,
 				29B3202D1B2C3288000B9BED /* MoviesViewController.m */,
 				29B320131B2C2272000B9BED /* Images.xcassets */,
@@ -114,6 +119,7 @@
 				29B320061B2C2272000B9BED /* Supporting Files */,
 				29B320321B2C46D2000B9BED /* MovieCell.h */,
 				29B320331B2C46D2000B9BED /* MovieCell.m */,
+				292933E21B2FE7FA00CE936B /* movie.png */,
 			);
 			path = RottenTomatoes;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292933E51B2FE83600CE936B /* dvd.png in Resources */,
+				292933E31B2FE7FA00CE936B /* movie.png in Resources */,
 				29B320121B2C2272000B9BED /* Main.storyboard in Resources */,
 				29B320171B2C2272000B9BED /* LaunchScreen.xib in Resources */,
 				29B320141B2C2272000B9BED /* Images.xcassets in Resources */,

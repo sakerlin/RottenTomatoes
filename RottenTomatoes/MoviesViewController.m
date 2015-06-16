@@ -26,7 +26,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+   
 }
 
 - (void)showNetworkError{
@@ -58,10 +58,18 @@
     [self updateTable];
 }
 - (void)updateTable{
+    NSString *catelog =  self.tabBarItem.title;
+    NSString *apiURLString;
+    NSString *host = @"http://api.rottentomatoes.com/api/public/v1.0/lists/";
+    NSString *param = @"?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=40&country=us";
+     
+    apiURLString = [catelog isEqualToString:@"movie"] ?
+    [NSString stringWithFormat:@"%@movies/box_office.json%@", host, param] :
+    [NSString stringWithFormat:@"%@dvds/top_rentals.json%@", host, param];
     
     [SVProgressHUD showWithStatus:@"Loading movies..." maskType:SVProgressHUDMaskTypeBlack];
     //NSString *apiURLString = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=92y6xsdanxph55tqaaackxjp";
-    NSString *apiURLString = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=40&country=us";
+    
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString: apiURLString]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:
      ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
