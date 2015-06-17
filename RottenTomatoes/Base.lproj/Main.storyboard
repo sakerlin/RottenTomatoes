@@ -55,7 +55,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="y1z-lK-yGh">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y1z-lK-yGh">
                                 <rect key="frame" x="0.0" y="64" width="414" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -157,7 +157,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="a5g-Bg-Euv">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Osp-xo-ddC" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Osp-xo-ddC" customClass="tabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cg5-du-UZr"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -224,9 +224,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GMv-AI-K8y">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMv-AI-K8y">
                                 <rect key="frame" x="0.0" y="64" width="414" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
                                     <outlet property="delegate" destination="xap-Gq-SGd" id="RF8-Ia-Kb9"/>
                                 </connections>
@@ -262,6 +262,6 @@
         <image name="movie.png" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A8V-BY-5G0"/>
+        <segue reference="rs3-9l-5dn"/>
     </inferredMetricsTieBreakers>
 </document>

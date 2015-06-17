@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		292933E31B2FE7FA00CE936B /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 292933E21B2FE7FA00CE936B /* movie.png */; };
 		292933E51B2FE83600CE936B /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = 292933E41B2FE83600CE936B /* dvd.png */; };
+		292933EE1B3136BA00CE936B /* tabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292933ED1B3136BA00CE936B /* tabBarController.m */; };
 		29B320091B2C2272000B9BED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B320081B2C2272000B9BED /* main.m */; };
 		29B3200C1B2C2272000B9BED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3200B1B2C2272000B9BED /* AppDelegate.m */; };
 		29B3200F1B2C2272000B9BED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3200E1B2C2272000B9BED /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* Begin PBXFileReference section */
 		292933E21B2FE7FA00CE936B /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
 		292933E41B2FE83600CE936B /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
+		292933EC1B3136BA00CE936B /* tabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarController.h; sourceTree = "<group>"; };
+		292933ED1B3136BA00CE936B /* tabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarController.m; sourceTree = "<group>"; };
 		29B320031B2C2272000B9BED /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B320071B2C2272000B9BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B320081B2C2272000B9BED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				29B320321B2C46D2000B9BED /* MovieCell.h */,
 				29B320331B2C46D2000B9BED /* MovieCell.m */,
 				292933E21B2FE7FA00CE936B /* movie.png */,
+				292933EC1B3136BA00CE936B /* tabBarController.h */,
+				292933ED1B3136BA00CE936B /* tabBarController.m */,
 			);
 			path = RottenTomatoes;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 			files = (
 				29B3200F1B2C2272000B9BED /* ViewController.m in Sources */,
 				29B320341B2C46D2000B9BED /* MovieCell.m in Sources */,
+				292933EE1B3136BA00CE936B /* tabBarController.m in Sources */,
 				29B3200C1B2C2272000B9BED /* AppDelegate.m in Sources */,
 				29B320091B2C2272000B9BED /* main.m in Sources */,
 				29F5B1041B2D833F00416451 /* Reachability.m in Sources */,
