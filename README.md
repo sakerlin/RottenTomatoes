@@ -24,7 +24,7 @@ Time spent: `<Number of hours spent>`
 - [ ] Customize the navigation bar.
 
 ### Walkthrough
-![Video Walkthrough]()
+![Video Walkthrough](tomoto.gif)
 
 Credits
 ---------
